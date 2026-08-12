@@ -22,7 +22,8 @@ public class Tweet {
     @Column(nullable = false)
     private UUID userId;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(nullable = false, columnDefinition = "TEXT") // columnDefinition = "TEXT" allows for longer content
+    // it's tell java don't use default varchar(255) for content column, use TEXT instead
     private String content;
 
     @Column(nullable = false, updatable = false)
