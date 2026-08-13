@@ -18,6 +18,7 @@ public class FollowService {
         this.userRepository = userRepository;
     }
 
+    // Here we use @Transactionl to ensure that both the follow relationship creation and the followee's followers count more 1
     @Transactional
     public void followUser(UUID followerId, UUID followeeId) {
         FollowId id = new FollowId(followerId, followeeId);
