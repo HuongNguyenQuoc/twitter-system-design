@@ -28,7 +28,7 @@ public class FanoutService {
         Long followersCount = jdbcTemplate.queryForObject(
                 "SELECT followers_count FROM users WHERE id = ?",
                 Long.class,
-                event.userId().toString()
+                event.userId()
         );
 
         if (followersCount == null) {
@@ -43,7 +43,7 @@ public class FanoutService {
 
         List<UUID> followerIds = jdbcTemplate.queryForList(
                 "SELECT follower_id FROM follows WHERE followee_id = ?",
-                UUID.class, event.userId().toString()
+                UUID.class, event.userId()
         );
 
         double score = event.createdAt().toEpochSecond(ZoneOffset.UTC);
