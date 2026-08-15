@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/fanout-worker/pom.xml" />
         <option value="$PROJECT_DIR$/tweet-write-service/pom.xml" />
+        <option value="$PROJECT_DIR$/read_service/pom.xml" />
       </list>
     </option>
   </component>
