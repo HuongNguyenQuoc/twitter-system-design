@@ -38,7 +38,7 @@ public class TimelineService {
 		List<UUID> celebrityIds = jdbcTemplate.query("""
 										SELECT f.followee_id AS id FROM follows f
 										JOIN users u ON f.followee_id = u.id
-										WHERE f.follower_id = :userId AND u.follower_count > :celebrityThreshold
+										WHERE f.follower_id = :userId AND u.followers_count > :celebrityThreshold
 										""",
 						new MapSqlParameterSource().addValue("userId", userId).addValue("celebrityThreshold", celebrityThreshold),
 						(rs, rowNum) -> UUID.fromString(rs.getString("id"))
