@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 public class GlobalExceptionHandler {
 
 	// Catches: "User is already following", "Followee not found", etc.
-	@ExceptionHandler(IllegalAccessException.class)
-	public ResponseEntity<ErrorResponse> handleIllegalAccessException(IllegalAccessException ex) {
+	@ExceptionHandler(IllegalArgumentException.class)
+	public ResponseEntity<ErrorResponse> handleIllegalArgumentException(IllegalArgumentException ex) {
 		return ResponseEntity
 						.status(HttpStatus.BAD_REQUEST)
 						.body(
