@@ -12,7 +12,7 @@ import java.util.*;
 public class TimelineService {
 
 	private static final org.springframework.jdbc.core.RowMapper<TweetRow> TWEET_ROW_MAPPER =
-					(rs, rowNum) -> new TweetRow(
+					(rs, rowNum) -> new com.example.read_service.timeline.TweetRow(
 									UUID.fromString(rs.getString("id")),
 									UUID.fromString(rs.getString("user_id")),
 									rs.getString("content"),
