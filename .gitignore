@@ -1,0 +1,17 @@
+# IDE
+.idea/
+out/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output (each module already has its own .gitignore, this is just a safety net)
+target/
+**/target/
+
+# Env / secrets
+.env
+*.env.local
