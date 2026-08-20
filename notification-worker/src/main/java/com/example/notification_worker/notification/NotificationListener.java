@@ -19,7 +19,7 @@ public class NotificationListener {
 	@KafkaListener(topics = "tweet-created", groupId = "notification-worker")
 	public void onTweetCreated(TweetCreatedEvent event) {
 		Long followerCount = jdbcTemplate.queryForObject(
-						"SELECT COUNT(*) FROM followers WHERE followee_id = ?", Long.class, event.userId()
+						"SELECT COUNT(*) FROM follows WHERE followee_id = ?", Long.class, event.userId()
 		);
 
 		// To do: Replace this log with a real push (Firebase), ...
